@@ -44,14 +44,13 @@ def main():
 
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
-            if matrix[i][j] in symbols:
+            if matrix[i][j] == "*":
                 nums = get_surrounding(matrix, i , j)
-                for num in nums:
-                    n = int(num)
-                    total += n
+                if len(nums) == 2:
+                    total += (int(nums[0]) * int(nums[1]))
+
     print(total)
     
-
 
 if __name__ == "__main__":
     main()
